@@ -21,6 +21,7 @@ import robot.subsystems.ExampleSubsystem;
 public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	public static final DriveTrain driveTrain = new DriveTrain();
 	public static OI oi;
 
 	Command autonomousCommand;
