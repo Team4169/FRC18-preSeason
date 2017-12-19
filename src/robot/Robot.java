@@ -104,6 +104,24 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		if(controller.getTriggerAxis(GenericHID.Hand kRight) >= 0 && controller.getTriggerAxis(GenericHID.Hand kLeftHand) >= 0){
+			
+		}
+		else if(controller.getTriggerAxis(GenericHID.Hand kRightHand) >= 0){
+			do{
+				spinRight(getTriggerAxis(GenericHID.Hand kRightHand));
+			}
+			while(controller.getTriggerAxis(GenericHID.Hand kRightHand) >= 0 && controller.controller.getTriggerAxis(GenericHID.Hand kLeftHand) == 0)
+		}
+		else if(controller.getTriggerAxis(GenericHID.Hand kLeftHand) >= 0){
+			do{
+				spinLeft(getTriggerAxis(GenericHID.Hand kLeftHand));
+			}
+			while(controller.getTriggerAxis(GenericHID.Hand kRightHand) == 0 && controller.controller.getTriggerAxis(GenericHID.Hand kLeftHand) >= 0)
+		}
+		if(/*left trigger vector > 0*/){
+			//mechanumdrive(rotation, vector)
+		}
 	}
 
 	/**

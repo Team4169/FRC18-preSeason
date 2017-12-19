@@ -9,6 +9,7 @@ import robot.commands.ExampleCommand;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+	XboxController controller = new XboxController(1);
 	//// CREATING BUTTONS
 	// One type of button is a joystick button which is any button on a
 	//// joystick.
@@ -16,7 +17,11 @@ public class OI {
 	// number it is.
 	// Joystick stick = new Joystick(port);
 	// Button button = new JoystickButton(stick, buttonNumber);
-
+	Button A = new JoystickButton(controller, 1);
+	Button B = new JoystickButton(controller, 2);
+	Button X = new JoystickButton(controller, 3);
+	Button Y = new JoystickButton(controller, 4);
+	
 	// There are a few additional built in buttons you can use. Additionally,
 	// by subclassing Button you can create custom triggers and bind those to
 	// commands the same as any other Button.
@@ -28,14 +33,17 @@ public class OI {
 	// Start the command when the button is pressed and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenPressed(new ExampleCommand());
-
+	A.whenPressed(new ExampleCommand());
+	B.whenPressed(new ExampleCommand());
+	X.whenPressed(new ExampleCommand());
+	Y.whenPressed(new ExampleCommand());
+	
 	// Run the command while the button is being held down and interrupt it once
 	// the button is released.
 	// button.whileHeld(new ExampleCommand());
-
+	`
 	// Start the command when the button is released and let it run the command
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
 	
-	XboxController controller = new XboxController(1);
 }
